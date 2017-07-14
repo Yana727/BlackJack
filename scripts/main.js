@@ -12,7 +12,7 @@
 function handValue(hand) {
   let total = 0
   let As = []
-  for (var i = 0; i < hand.length; i++) {
+  for (let i = 0; i < hand.length; i++) {
     let cardValue = 0
     if (hand[i] === 'J' || hand[i] === 'Q' || hand[i] === 'K') {
       cardValue = 10
@@ -22,13 +22,28 @@ function handValue(hand) {
       // else the number is an 'A'
       As.push(hand[i])
     }
-
     total = total + cardValue
   }
-  // that goes logic goes here
-  // if the total is over
+  console.log(As)
+  for (let i = 0; i < As.length; i++) {
+    // for each ace. check logic for if the total is over 21 or not
+    if (total + 11 <= 21) {
+      total += 11
+    } else {
+      total += 1
+    }
+  }
   return total
 }
+//
+// if (total <= 21){
+//   total += 11
+// }
+// if ('A') { total <= 21
+// }
+// else {'A' = 11
+// that goes logic goes here
+// if the total is over
 
 /* -----  Hints ------
 
